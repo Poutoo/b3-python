@@ -205,7 +205,20 @@ autre_sous_liste = fruits[:2]  # premiers deux elements
 autre_sous_liste2 = fruits[2:]  # elements a partir de l'index 2    
 autre_sous_liste3 = fruits[1::2]  # elements d'index impair
 
+# les listes de listes (listes imbriquees)
+matrice = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+for ligne in matrice:
+    for element in ligne:
+        print(f"Element: {element}")
+# acceder a un element specifique
+element = matrice[1][2] # 6
 
+# modifier un element specifique
+matrice[0][0] = 10  # change 1 en 10
 
     
     
