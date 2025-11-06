@@ -1,6 +1,10 @@
 from app.utils import Saluer
 from app.utils import add, divide, addition_multiple, afficher_info
+import os
+import time
 import sys
+
+valeurGlobale = 10
 
 def main():
     print("Début d'exécution du programme")
@@ -246,4 +250,56 @@ addition_multiple(1, 2, 3, 4, 5)
 
 afficher_info(nom="Alice", âge="30", ville="Paris")
 
+u= 5
 
+def autre_fonction() -> None:
+    u = 10
+    print(f"Valeur locale de u : {u}")
+    print(f"Valeur globale de u : {globals()['u']}")
+    
+autre_fonction()
+
+addition = lambda x, y: x + y
+resultat = addition(3, 4)
+print(f"Résultat de l'addition lambda : {resultat}")
+
+nbrs = [5, 3, 2, 4, 1]
+nbrs_tries = sorted(nbrs, reverse=True)
+print(f"Nombres originaux : {nbrs}")
+print(f"Nombres triés en ordre décroissant : {nbrs_tries}")
+
+# décorateur
+def decorateur(fonction):
+    def fonction_modifiee(*args, **kwargs):
+        print("Avant l'appel de la fonction.")
+        resultat = fonction(*args, **kwargs)
+        print("Après l'appel de la fonction.")
+        return resultat
+    return fonction_modifiee
+
+@decorateur
+def hello():
+    print("Hello, World!")
+
+hello()
+
+
+
+# parcourir une arborescence de répertoires
+""" def fileDiscovering(path: str, niveau: int =0) -> None:
+    for element in os.listdir(path):
+        complete_path = os.path.join(path, element)
+        print(' ' * niveau + f"{element}")
+        if os.path.isdir(complete_path):
+            fileDiscovering(complete_path, niveau + 2)
+            
+fileDiscovering(".") """
+
+# afficher du texte avec un effet de machine à écrire en ligne
+def afficher_prog(texte: str, delai: float = 0.01) -> None:
+    for char in texte:
+        print(char, end='', flush=True)
+        time.sleep(delai)
+    print()
+    
+afficher_prog("Bonjour tout le monde!", 0.05)
