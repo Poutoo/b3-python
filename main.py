@@ -1,4 +1,5 @@
 from app.utils import Saluer
+from app.utils import add, divide, addition_multiple, afficher_info
 import sys
 
 def main():
@@ -20,6 +21,8 @@ def main():
 if __name__ == "__main__":
     main()
     
+
+# [------------------------ Conditions ------------------------]
 
 
 x = 10
@@ -44,7 +47,10 @@ elif x < 10:
 # ternaire
 resultat = "x est 10" if x == 10 else "x n'est pas 10"
 
-# switch
+
+# [------------------------ Match Case ------------------------]
+
+
 jour = 'lundi'
 match jour:
     case 'lundi':
@@ -56,7 +62,10 @@ match jour:
     case _:
         print("C'est un autre jour de la semaine.")
         
-# boucles
+        
+# [------------------------ Boucles ------------------------]
+
+
 for i in range(5):
     print(f"itération {i}")
     
@@ -127,7 +136,11 @@ for i in range(5):
         break     # quitte la boucle lorsque i vaut 4
     print(f"i = {i}")
     
-# dictionnaires
+    
+    
+# [------------------------ Dictionnaires ------------------------]
+
+
 mon_dict = {
     "nom": "Alice",
     "âge": 30,
@@ -153,8 +166,10 @@ if 'bob' in classe:
 # nombre d'éléments dans un dictionnaire
 print(f"Le dictionnaire contient {len(classe)} éléments.")
 
-#-------------------------------------------------------------
-#Les listes
+
+
+# [------------------------ Listes ------------------------]
+
 # mutables
 fruits = ["pomme", "banane", "cerise"]
 listeVide = []
@@ -205,7 +220,8 @@ autre_sous_liste = fruits[:2]  # premiers deux elements
 autre_sous_liste2 = fruits[2:]  # elements a partir de l'index 2    
 autre_sous_liste3 = fruits[1::2]  # elements d'index impair
 
-# les listes de listes (listes imbriquees)
+
+# [------------------------ Listes imbriquees ------------------------]
 matrice = [
     [1, 2, 3],
     [4, 5, 6],
@@ -220,7 +236,14 @@ element = matrice[1][2] # 6
 # modifier un element specifique
 matrice[0][0] = 10  # change 1 en 10
 
-    
-    
+# docstring et annotations de type
+f: int = 1
+g: int = 1
+
+add(f, g)
+divide(10)
+addition_multiple(1, 2, 3, 4, 5)
+
+afficher_info(nom="Alice", âge="30", ville="Paris")
 
 
