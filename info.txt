@@ -1,0 +1,3 @@
+Ceci est une ligne écrite dans le fichier.
+Voici une autre ligne.
+Fin du fichier.

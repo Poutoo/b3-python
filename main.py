@@ -303,3 +303,38 @@ def afficher_prog(texte: str, delai: float = 0.01) -> None:
     print()
     
 afficher_prog("Bonjour tout le monde!", 0.05)
+
+# tant que l'utilisateur n'entre pas un chiffre valide, redemander
+""" def chiffre_valide() -> int:
+    while True:
+        reponse = input("Veuillez entrer un chiffre : ")
+        try:
+            valeur = int(reponse)
+            return valeur
+        except ValueError:
+            print("Ce n'est pas un chiffre valide. Veuillez réessayer.")
+            
+chiffre = chiffre_valide()
+print(f"Vous avez entré le chiffre : {chiffre}") """
+
+
+# ouvrir un flux sur un fichier
+with open("./info.txt", "w", encoding="utf-8") as f:
+    f.write("Ceci est une ligne écrite dans le fichier.\n")
+    f.write("Voici une autre ligne.\n")
+    f.write("Fin du fichier.\n")
+
+with open("./info.txt", "r", encoding="utf-8") as f:
+    contenu = f.read()
+    print("Contenu du fichier info.txt :")
+    print(contenu)
+    
+notes = { 15, 18, 12, 14, 19, 17 }
+with open("./notes.txt", "w", encoding="utf-8") as f:
+    for note in notes:
+        f.write(f"{note}\n")
+        
+with open("./notes.txt", "r", encoding="utf-8") as f:
+    contenu = f.read()
+    print("Contenu du fichier notes.txt :")
+    print(contenu)
